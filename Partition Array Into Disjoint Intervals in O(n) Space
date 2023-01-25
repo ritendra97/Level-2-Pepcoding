@@ -1,0 +1,36 @@
+public class ArrayProblems{
+
+    public static int disJointInterval(int arr[]) {
+    
+        int n = arr.length;
+        int max[] = new int[n];
+        int min[] = new int[n];
+
+        min[n-1] = arr[n-1];
+        for(int i = n-2;i>=0;i--){
+            min[i] = Math.min(arr[i],min[i+1]);
+        }
+
+        max[0] = arr[0];
+        for(int i = 1;i<n;i++){
+            max[i] = Math.max(arr[i],max[i-1]);
+        }
+
+        int i = 1;
+        int j = 0;
+
+        while(i<n && j<n){
+            if(min[i]>max[j]){
+                return i; 
+            }
+            i++;
+            j++;
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1,1,1,0,6,12};
+        System.out.println(disJointInterval(arr));
+    }    
+}
