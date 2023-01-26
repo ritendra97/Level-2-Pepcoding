@@ -1,8 +1,8 @@
-import java.net.http.HttpResponse.PushPromiseHandler;
 import java.util.Arrays;
 
-//Sort Array By Parity
+Array is going to divide into two parts... first will be prime number
 
+//Sort Array By Parity
 public class ArrayProblems{
 
     public static void prirtySort(int arr[]){
