@@ -1,0 +1,30 @@
+import java.net.http.HttpResponse.PushPromiseHandler;
+import java.util.Arrays;
+
+//Sort Array By Parity
+
+public class ArrayProblems{
+
+    public static void prirtySort(int arr[]){
+        int i = 0;
+        int j = 0;
+
+        while(i<arr.length && j<arr.length){
+            if(arr[i]%2==0){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j++;
+            }else{
+                i++;
+            }
+        }
+        Arrays.stream(arr).forEachOrdered(System.out::println);
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {9,8,7,6,2,3};
+        prirtySort(arr);
+    }    
+}
